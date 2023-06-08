@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import '../../App.scss';
-const places = ['Imi-Nwarg', 'Agnso-Nwarg', 'Tasli', 'Ait-Etiq', 'Tamda'];
+const places = ['Imi-Nwarg', 'Tasli', 'Ait-Etiq', 'Tamda'];
 
 
 
