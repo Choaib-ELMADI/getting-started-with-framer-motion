@@ -1,0 +1,25 @@
+:root {
+  --normal__size:   19px;
+  --medium__size:   32px;
+  --big__size:      28px;
+  --verybig__size:  54px;
+
+  --brand:          purple;
+  --brand__trs:     rgba(128, 0, 128, .2);
+
+  --black:          black;
+  --white:          rgb(199, 199, 199);
+  --gray:           #434343;  
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  color: var(--white);
+  background: var(--black);
+}
