@@ -4,11 +4,13 @@
   --big__size:      28px;
   --verybig__size:  54px;
 
-  --brand:          purple;
-  --brand__trs:     rgba(128, 0, 128, .2);
+  --brand__1:       #9a06de;
+  --brand__2:       #5931f5;
+  --brand__trs:     rgba(110, 46, 238, .2);
 
   --black:          black;
   --white:          rgb(199, 199, 199);
+  --white__trs:     rgba(199, 199, 199, .7);
   --gray:           #434343;  
 }
 
@@ -21,5 +23,10 @@
 
 body {
   color: var(--white);
-  background: var(--black);
+  background-image: linear-gradient(
+    -20deg, 
+    var(--brand__1),
+    var(--brand__2)
+  );
+  background-repeat: no-repeat;
 }

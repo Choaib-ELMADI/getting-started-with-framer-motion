@@ -1,0 +1,26 @@
+.app__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    position: fixed;
+    top: 2rem;
+    width: 95%;
+    max-width: 1600px;
+    margin: 0 auto;
+
+    .svg {
+        width: 72px;
+        height: 72px;
+        background: var(--brand__1);
+
+        display: grid;
+        place-items: center;
+    }
+
+    .header {
+        width: 100%;
+        padding: .5rem 0;
+        border-bottom: 1.5px solid var(--white);
+    }
+}
