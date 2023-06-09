@@ -13,6 +13,8 @@
     .logo {
         width: 72px;
         height: 72px;
+        cursor: grab;
+        z-index: 9999;
 
         img {
             width: 100%;

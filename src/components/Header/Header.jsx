@@ -19,6 +19,8 @@ const Header = () => {
                     stiffness: 100,
                     damping: 15
                 }}
+                drag
+                dragConstraints={{ left: 0, top: 0, bottom: 0, right: 0 }}
             >
                 <img src={ images.mountain } alt='Mountains' draggable='false' />
             </motion.div>
