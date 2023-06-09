@@ -1,7 +1,28 @@
-1) Install framer motion
-2) Import motion from framer motion
-3) Make the element you want to animate, a motion element
+1. Install framer motion
+2. Import motion from framer motion
+3. Make the element you want to animate, a motion element
 
-4) Add animate prop (animate to)
+4. Add animate prop (animate to)
     Add initial attribute (animate from)
     Add transition attribute
+
+5. Add whileHover attribute to animate when hovering
+
+6. Variants:
+    Create an initial state and the state to animate to (You can add transition inside them)
+    Pass the variants you created to variants attribute
+    Add the initial and animate names
+
+    ==> attributes propagate to children motion elements, but not inheriting the parent values
+
+    ==> when attribute tells the parent to excute the childrens animations after he completed mounting
+
+    ==> staggerChildren allows to add delay between childrens
+
+7. Keyframes:
+    Add an array of values to the property you want to animate
+    or add one value and also add repeat (yoyo) property to the transition object
+
+8. Animate presence:
+    We use it to animate something out of the page
+    Add the motion element and the exit attribute

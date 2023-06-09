@@ -4,16 +4,50 @@ import { motion } from 'framer-motion';
 
 import '../../App.scss';
 const places = ['Imi-Nwarg', 'Tasli', 'Ait-Etiq', 'Tamda'];
+const containerVariants = {
+    hidden: {
+        opacity: 0,
+        x: '100vw',
+    },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: { 
+            type: 'spring', 
+            delay: .2,
+            damping: 15
+        },
+    }
+};
+const nextVariants = {
+    hidden: {
+        y: 30,
+    },
+    visible: {
+        y: 0,
+        transition: { delay: 0 }
+    },
+    hover: {
+        scale: 1.04,
+        textShadow: '0px 0px 8px var(--white__trs)',
+        boxShadow: '0px 0px 8px var(--white)',
+        transition: {
+            duration: .4,
+            repeatType: 'reverse',
+            repeat: Infinity
+        }
+    },
+};
 
 
 
-const Step1 = ({ selectedPlace, setSelectedPlace }) => {
+const Step1 = ({ selectedPlace, setSelectedPlace, setSelectedActivities }) => {
     return (
         <motion.div 
             className='app__step'
-            initial={{ x: '100vw' }}
-            animate={{ x: 0 }}
-            transition={{ type: 'spring', delay: .2 }}
+            variants={ containerVariants }
+            initial='hidden'
+            animate='visible'
         >
             <h2>Step 1: Choose a place</h2>
             <ul>
@@ -21,7 +55,10 @@ const Step1 = ({ selectedPlace, setSelectedPlace }) => {
                     places.map((place) => (
                         <li 
                             key={ place }
-                            onClick={  () => setSelectedPlace(place) }
+                            onClick={  () => {
+                                setSelectedPlace(place);
+                                setSelectedActivities([]);
+                            }}
                             className={ place === selectedPlace ? 'active' : '' }
                         >
                             { place }
@@ -33,8 +70,8 @@ const Step1 = ({ selectedPlace, setSelectedPlace }) => {
                 selectedPlace &&
                 <Link className='link' to='/step2'>
                     <motion.div
-                        initial={{ y: 30 }}
-                        animate={{ y: 0 }}
+                        variants={ nextVariants }
+                        whileHover='hover'
                     >
                         Next
                     </motion.div>

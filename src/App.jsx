@@ -22,7 +22,8 @@ const App = () => {
             element={ 
               <Step1 
                 selectedPlace={ selectedPlace } 
-                setSelectedPlace={ setSelectedPlace } 
+                setSelectedPlace={ setSelectedPlace }
+                setSelectedActivities={ setSelectedActivities }
               /> 
             } 
           />
@@ -33,6 +34,7 @@ const App = () => {
               <Step2
                 selectedActivities={ selectedActivities }
                 setSelectedActivities={ setSelectedActivities }
+                selectedPlace={ selectedPlace }
               /> 
             } 
           />

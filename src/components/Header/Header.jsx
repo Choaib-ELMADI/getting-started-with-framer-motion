@@ -13,7 +13,12 @@ const Header = () => {
                 className='header'
                 initial={{ y: -200 }}
                 animate={{ y: -10 }}
-                transition={{ delay: .35, type: 'spring', stiffness: 100 }}
+                transition={{ 
+                    delay: .35, 
+                    type: 'spring', 
+                    stiffness: 100,
+                    damping: 15
+                }}
             >
                 <h3>Ait-mgoun</h3>
             </motion.div>
