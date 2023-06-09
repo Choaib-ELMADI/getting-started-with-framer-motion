@@ -1,0 +1,7 @@
+1) Install framer motion
+2) Import motion from framer motion
+3) Make the element you want to animate, a motion element
+
+4) Add animate prop (animate to)
+    Add initial attribute (animate from)
+    Add transition attribute

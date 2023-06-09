@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
 
 import '../../App.scss';
 const activities = ['Activity  01', 'Activity  02', 'Activity  03', 'Activity  04', 'Activity  05'];
@@ -23,7 +24,12 @@ const Step2 = ({ selectedActivities, setSelectedActivities }) => {
     };
 
     return (
-        <div className='app__step'>
+        <motion.div 
+            className='app__step'
+            initial={{ x: '100vw' }}
+            animate={{ x: 0 }}
+            transition={{ type: 'spring', delay: .2 }}
+        >
             <h2>Step 2: Choose activities</h2>
             <ul>
                 {
@@ -40,9 +46,16 @@ const Step2 = ({ selectedActivities, setSelectedActivities }) => {
             </ul>
             {
                 selectedActivities.length >= 1 &&
-                <Link className='link' to='/step3'>Next</Link>
+                <Link className='link' to='/step3'>
+                    <motion.div
+                        initial={{ y: 30 }}
+                        animate={{ y: 0 }}
+                    >
+                        Next
+                    </motion.div>
+                </Link>
             }
-        </div>
+        </motion.div>
     );
 };
 

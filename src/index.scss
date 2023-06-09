@@ -30,3 +30,8 @@ body {
   );
   background-repeat: no-repeat;
 }
+
+*::selection {
+  color: var(--brand__1);
+  background: var(--black);
+}
