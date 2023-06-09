@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import '../../App.scss';
@@ -6,9 +6,7 @@ const places = ['Imi-Nwarg', 'Tasli', 'Ait-Etiq', 'Tamda'];
 
 
 
-const Step1 = () => {
-    const [selectedPlace, setSelectedPlace] = useState(null);
-
+const Step1 = ({ selectedPlace, setSelectedPlace }) => {
     return (
         <div className='app__step'>
             <h2>Step 1: Choose a place</h2>
