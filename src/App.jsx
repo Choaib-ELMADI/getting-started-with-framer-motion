@@ -23,7 +23,7 @@ const App = () => {
               <Step1 
                 selectedPlace={ selectedPlace } 
                 setSelectedPlace={ setSelectedPlace } 
-                /> 
+              /> 
             } 
           />
 

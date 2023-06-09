@@ -40,7 +40,7 @@ const Step2 = ({ selectedActivities, setSelectedActivities }) => {
             </ul>
             {
                 selectedActivities.length >= 1 &&
-                <Link className='link' to='/step3'>Visit Ait-mgoun</Link>
+                <Link className='link' to='/step3'>Next</Link>
             }
         </div>
     );

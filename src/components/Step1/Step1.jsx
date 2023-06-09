@@ -25,7 +25,7 @@ const Step1 = ({ selectedPlace, setSelectedPlace }) => {
             </ul>
             {
                 selectedPlace &&
-                <Link className='link' to='/step2'>Visit Ait-mgoun</Link>
+                <Link className='link' to='/step2'>Next</Link>
             }
         </div>
     );
