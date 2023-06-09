@@ -21,16 +21,6 @@
   font-family: system-ui, sans-serif;
 }
 
-body {
-  color: var(--white);
-  background-image: linear-gradient(
-    -20deg, 
-    var(--brand__1),
-    var(--brand__2)
-  );
-  background-repeat: no-repeat;
-}
-
 *::selection {
   color: var(--brand__1);
   background: var(--black);

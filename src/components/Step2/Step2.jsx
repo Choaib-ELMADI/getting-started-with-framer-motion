@@ -30,6 +30,12 @@ const containerVariants = {
             delay: .2,
             damping: 15,
         },
+    }, 
+    exit: {
+        x: '-100vw',
+        transition: {
+            ease: 'easeInOut',
+        }
     }
 };
 const nextVariants = {
@@ -77,6 +83,7 @@ const Step2 = ({ selectedActivities, setSelectedActivities, selectedPlace }) => 
             variants={ containerVariants }
             initial='hidden'
             animate='visible'
+            exit='exit'
         >
             <h2>Step 2: Choose activities</h2>
             <ul>

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 import '../../App.scss';
 const containerVariants = {
@@ -17,6 +17,12 @@ const containerVariants = {
             when: 'beforeChildren',
             staggerChildren: .35
         },
+    },
+    exit: {
+        x: '-100vw',
+        transition: {
+            ease: 'easeInOut',
+        }
     }
 };
 const childVariants = {
@@ -32,12 +38,12 @@ const childVariants = {
 
 
 
-const Step3 = ({ selectedPlace, selectedActivities }) => {
-    const [isShown, setIsShown] = useState(true);
-
-    setTimeout(() => {
-        setIsShown(false);
-    }, 3500);
+const Step3 = ({ selectedPlace, selectedActivities, setShowModal }) => {
+    useEffect(() => {
+        setTimeout(() => {
+            setShowModal(true)
+        }, 5000);
+    }, [setShowModal]);
 
     return (
         <motion.div 
@@ -45,14 +51,9 @@ const Step3 = ({ selectedPlace, selectedActivities }) => {
             variants={ containerVariants }
             initial='hidden'
             animate='visible'
+            exit='exit'
         >
-            <AnimatePresence>
-                { isShown && 
-                    <motion.h2
-                        exit={{ opacity: 0, y: -100 }}
-                    >Thanks for your visit :)</motion.h2>
-                }
-            </AnimatePresence>
+            <h2>Thanks for your visit :)</h2>
             <motion.p
                 variants={ childVariants }
                 style={{ fontSize: 'calc(var(--normal__size) + 6px' }}
