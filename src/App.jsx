@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 import './App.scss';
-import { Header, Home, Step1, Step2, Step3, Modal } from './components';
+import { Header, Home, Step1, Step2, Step3, Modal, Loader } from './components';
 
 
 
@@ -11,8 +11,15 @@ const App = () => {
   const [selectedPlace, setSelectedPlace] = useState('');
   const [selectedActivities, setSelectedActivities] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const location = useLocation();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, []);  
 
   return (
     <div className='app'>
@@ -22,6 +29,7 @@ const App = () => {
         setShowModal={ setShowModal } 
         setSelectedPlace={ setSelectedPlace }
       />
+      { loading && <Loader /> }
       <AnimatePresence onExitComplete={ () => setShowModal(false) }>
         <Routes location={ location } key={ location.key }>
           <Route path='/' element={ <Home /> } />
