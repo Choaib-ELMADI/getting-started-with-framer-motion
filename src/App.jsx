@@ -8,7 +8,7 @@ import { Header, Home, Step1, Step2, Step3, Modal } from './components';
 
 
 const App = () => {
-  const [selectedPlace, setSelectedPlace] = useState(null);
+  const [selectedPlace, setSelectedPlace] = useState('');
   const [selectedActivities, setSelectedActivities] = useState([]);
   const [showModal, setShowModal] = useState(false);
 
@@ -17,8 +17,12 @@ const App = () => {
   return (
     <div className='app'>
       <Header />
-      <Modal showModal={ showModal } setShowModal={ setShowModal } />
-      <AnimatePresence>
+      <Modal 
+        showModal={ showModal } 
+        setShowModal={ setShowModal } 
+        setSelectedPlace={ setSelectedPlace }
+      />
+      <AnimatePresence onExitComplete={ () => setShowModal(false) }>
         <Routes location={ location } key={ location.key }>
           <Route path='/' element={ <Home /> } />
           

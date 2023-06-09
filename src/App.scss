@@ -103,9 +103,40 @@
         top: 0;
         left: 0;
         z-index: 99;
+
+        display: grid;
+        place-items: center;
         
-        backdrop-filter: blur(2px);
+        backdrop-filter: blur(8px);
         width: 100%;
         height: 100%;
+        color: var(--black);
+
+        .modal {
+            width: 100%;
+            max-width: 400px;
+            background: var(--white);
+            padding: 3rem 0;
+            border-radius: 12px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            p {
+                font-size: calc(var(--normal__size) + 1.5px);
+            }
+
+            .link div {
+                color: var(--black);
+                transition: .2s;
+
+                &:hover {
+                    color: var(--brand__1);
+                    background: var(--brand__trs);
+                }
+            }
+        }
     }
 }

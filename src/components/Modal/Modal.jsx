@@ -11,10 +11,23 @@ const modalVariants = {
         opacity: 1
     }
 };
+const innerModalVariants = {
+    hidden: {
+        y: '-60vh',
+        opacity: 0,
+    },
+    visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            delay: .5
+        }
+    }
+};
 
 
 
-const Modal = ({ showModal, setShowModal }) => {
+const Modal = ({ showModal, setShowModal, setSelectedPlace }) => {
     return (
         <AnimatePresence>
             { showModal &&
@@ -23,8 +36,23 @@ const Modal = ({ showModal, setShowModal }) => {
                     variants={ modalVariants }
                     initial='hidden'
                     animate='visible'
+                    exit='hidden'
                 >
-
+                    <motion.div 
+                        className='modal'
+                        variants={ innerModalVariants }
+                        initial='hidden'
+                        animate='visible'
+                    >
+                        <p>Want to visit another place?</p>
+                        <Link to='/' className='link'>
+                            <div
+                                onClick={ () => {
+                                    setSelectedPlace('')
+                                }}
+                            >Start again</div>
+                        </Link>
+                    </motion.div>
                 </motion.div>
             }
         </AnimatePresence>
