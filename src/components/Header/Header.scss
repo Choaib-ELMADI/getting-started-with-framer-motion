@@ -1,6 +1,6 @@
 .app__header {
     display: flex;
-    align-items: center;
+    align-items: end;
     gap: 1rem;
 
     position: fixed;
@@ -13,15 +13,21 @@
     .logo {
         width: 72px;
         height: 72px;
-        background: var(--brand__1);
 
-        display: grid;
-        place-items: center;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
     .header {
         width: 100%;
-        padding: .5rem 0;
+        padding: 0;
         border-bottom: 1.5px solid var(--white);
+
+        h2 {
+            text-transform: uppercase;
+        }
     }
 }

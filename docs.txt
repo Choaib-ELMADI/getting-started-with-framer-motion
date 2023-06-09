@@ -26,3 +26,31 @@
 8. Animate presence:
     We use it to animate something out of the page
     Add the motion element and the exit attribute
+
+
+
+X. SVG: scalable vector graphics:
+    viewport: defined by the width and the height of the svg.
+    viewBox: defines the viewable area of the viewport (where the viewport is starting)
+
+    <svg>
+    
+        circle:
+            => r: radius
+            => c: center => cx and cy
+            => fill, stroke, strokeWidth...
+
+        rect:
+            => x: offset left
+            => y: offset top
+            => fill, stroke, strokeWidth...
+
+        line:
+            => x1 and y1: starting point
+            => x2 and y2: ending point
+            => stroke, strokeWidth...
+
+        polygon:
+            => points: x and y for each point
+
+    </svg>

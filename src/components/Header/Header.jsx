@@ -2,17 +2,17 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import './Header.scss';
+import images from '../../constants/images';
 
 
 
 const Header = () => {
     return (
         <div className='app__header'>
-            <div className='logo'><h3>SVG</h3></div>
             <motion.div 
-                className='header'
+                className='logo'
                 initial={{ y: -200 }}
-                animate={{ y: -10 }}
+                animate={{ y: 0 }}
                 transition={{ 
                     delay: .35, 
                     type: 'spring', 
@@ -20,7 +20,20 @@ const Header = () => {
                     damping: 15
                 }}
             >
-                <h3>Ait-mgoun</h3>
+                <img src={ images.mountain } alt='Mountains' draggable='false' />
+            </motion.div>
+            <motion.div 
+                className='header'
+                initial={{ y: -200 }}
+                animate={{ y: -16 }}
+                transition={{ 
+                    delay: .35, 
+                    type: 'spring', 
+                    stiffness: 100,
+                    damping: 15
+                }}
+            >
+                <h2>Ait-mgoun</h2>
             </motion.div>
         </div>
     );
