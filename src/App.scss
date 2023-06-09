@@ -77,6 +77,12 @@
             flex-direction: column;
             align-items: center;
             gap: .5rem;
+
+            p:not(:nth-child(1)) {
+                padding: .15rem .5rem .25rem .5rem;
+                background: var(--gray__trs);
+                border-radius: 20px;
+            }
         }
 
         &.step3 {
