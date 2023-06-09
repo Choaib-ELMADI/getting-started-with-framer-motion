@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useCycle } from 'framer-motion';
 
 import '../../App.scss';
 const loaderVariants = {
@@ -20,21 +20,33 @@ const loaderVariants = {
             },
         }
     },
-    visible: {
-
+    animationTwo: {
+        x: 0,
+        y: [0, -40],
+        transition: {
+            y: {
+                duration: .25,
+                repeat: Infinity,
+                repeatType: 'reverse',
+                ease: 'easeOut'
+            },
+        }
     },
-}
+};
 
 
 
 const Loader = () => {
+    const [animation, cycleAnimation] = useCycle('animationOne', 'animationTwo');
+
     return (
         <div className='app__loader'>
             <motion.div 
                 className='ball'
                 variants={ loaderVariants }
-                animate='animationOne'
+                animate={ animation }
             />
+            <div onClick={ () => cycleAnimation() }>Cycle Loader</div>
         </div>
     );
 };

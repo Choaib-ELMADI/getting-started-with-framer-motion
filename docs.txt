@@ -27,7 +27,8 @@
     We use it to animate something out of the page
     Add the motion element and the exit attribute
 
-
+9. useCycle Hook:
+    toggle between variants animations
 
 X. SVG: scalable vector graphics:
     viewport: defined by the width and the height of the svg.
